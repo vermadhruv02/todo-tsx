@@ -1,7 +1,7 @@
 import './App.css'
 import Form from './components/Form'
 import TableData from './components/TableData'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from "axios";
 
 type Todo = {

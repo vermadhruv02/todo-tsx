@@ -11,7 +11,7 @@ import {
 import { Input } from "./ui/input";
 import { Trash } from "lucide-react";
 import { Button } from "./ui/button";
-import React,{ useEffect, useState } from "react";
+import React,{ useState } from "react";
 import axios from "axios";
 import UpdateTask from "./UpdateTask";
 const url = import.meta.env.VITE_BACKEND_URL;
