@@ -4,7 +4,7 @@ import { DatePicker } from './Date';
 import { Button } from './ui/button';
 import axios from 'axios';
 
-const Form = ({onAdd}) => {
+const Form = ({onAdd}: any) => {
   
   const [task, setTask] = useState('');
   const [date, setDate] = React.useState<Date>()

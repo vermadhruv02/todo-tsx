@@ -17,7 +17,7 @@ import { useState } from "react";
 
 
 
-const UpdateTask = ({handleUpdate , task, setTask, date, setDate, todoId,todoTask, todoDueDate}  ) => {
+const UpdateTask = ({handleUpdate , task, setTask, date, setDate, todoId,todoTask, todoDueDate}:any  ) => {
     // const todoId=todo._id;
     // console.log(todoId , todoDueDate, todoTask);
     // setTask();

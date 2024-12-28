@@ -4,9 +4,14 @@ import TableData from './components/TableData'
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 
+type Todo = {
+  id: number;
+  text: string;
+  dueDate: boolean;
+};
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   useEffect(() => {
     return () => {
@@ -21,7 +26,7 @@ function App() {
   }, []);
 
   // const [data,setData] = useState([]);
-  const onAdd = (data)=>{
+  const onAdd = (data: any)=>{
     console.log(data); 
     setTodos(prevTodos => [...prevTodos, data]);
     console.log(todos);

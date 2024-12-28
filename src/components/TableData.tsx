@@ -17,7 +17,7 @@ import UpdateTask from "./UpdateTask";
 const url = import.meta.env.VITE_BACKEND_URL;
 
 
-const TableData = ({todos, setTodos}) => {
+const TableData = ({todos, setTodos}: any) => {
 
   const [task, setTask] = useState('');
   const [date, setDate] = React.useState<Date>()
@@ -26,16 +26,16 @@ const TableData = ({todos, setTodos}) => {
   
   const handleDelete = (todoId: string) => {
     axios.delete(`${url}/delete/${todoId}`).then(() => {
-      const updatedTodos = todos.filter(todo => todo._id !== todoId)
+      const updatedTodos = todos.filter((todo :any) => todo._id !== todoId)
       setTodos(updatedTodos)
     });
   };
 
-  const handleUpdate = (todoId: string,task,date)=>{
+  const handleUpdate = (todoId: string,task:any,date:any)=>{
     axios.put(`${url}/update/${todoId}`,({task, date}))
     .then(res => {
-      setTodos((prevTodos) =>
-        prevTodos.map((todo) =>
+      setTodos((prevTodos: any) =>
+        prevTodos.map((todo: any) =>
           todo.id === todoId ? res.data : todo
         )
       );
@@ -65,7 +65,7 @@ const TableData = ({todos, setTodos}) => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {todos.map((todo) => {
+        {todos.map((todo: any) => {
           const year = todo.dueDate.slice(0, 4);
           const month = todo.dueDate.slice(5, 7);
           const dateth = todo.dueDate.slice(8, 10);
