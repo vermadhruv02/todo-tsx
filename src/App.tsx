@@ -14,16 +14,17 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   useEffect(() => {
-    return () => {
+    // return () => {
       axios
         .get(`${import.meta.env.VITE_BACKEND_URL}/allTask`)
         .then((tasks) => {
           setTodos(tasks.data);
           console.log(typeof tasks.data, tasks.data);
         })
-          .catch((err) => console.log(err));
+          .catch((err) => console.log(`Fetching data From backend Error: ${err}`));
         }
-  }, []);
+  // }
+  , []);
 
   // const [data,setData] = useState([]);
   const onAdd = (data: any)=>{
